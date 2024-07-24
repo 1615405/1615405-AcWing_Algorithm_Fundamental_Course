@@ -4,7 +4,7 @@ def quick_sort(q: List[int], l: int, r: int) -> None:
     if l >= r:  return
     i, j = l, r
     pivot = q[(l + r) // 2]
-    while i <= j:
+    while i < j:
         while q[i] < pivot:
             i += 1
         while q[j] > pivot:
