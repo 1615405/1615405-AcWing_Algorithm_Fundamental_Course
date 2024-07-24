@@ -1,3 +1,5 @@
+AcWing 785. 快速排序
+AcWing 786. 第k个数
 AcWing 787. 归并排序
 AcWing 788. 逆序对的数量(归并排序)
 AcWing 789. 数的范围(二分查找)
