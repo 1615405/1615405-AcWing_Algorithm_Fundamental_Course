@@ -1,20 +1,22 @@
 from typing import List
 
 def quick_sort(q: List[int], l: int, r: int) -> None:
-    if l >= r:  return
-    i, j = l, r
+    if l == r:  return
+    i, j = l - 1, r + 1
     pivot = q[(l + r) // 2]
     while i < j:
-        while q[i] < pivot:
+        while True:
             i += 1
-        while q[j] > pivot:
+            if q[i] >= pivot:
+                break
+        while True:
             j -= 1
-        if i <= j:
+            if q[j] <= pivot:
+                break
+        if i < j:
             q[i], q[j] = q[j], q[i]
-            i += 1
-            j -= 1
     quick_sort(q, l, j)
-    quick_sort(q, i, r)
+    quick_sort(q, j + 1, r)
 
 
 if __name__ == "__main__":
