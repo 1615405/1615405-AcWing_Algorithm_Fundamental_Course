@@ -5,7 +5,7 @@ def main():
     nums = list(map(int, input().split()))
 
     # 初始化差分数组
-    diff = [0] * (n + 2)
+    diff = [0] * (n + 1)
     for i in range(n):
         if i == 0:
             diff[i] = nums[i]
