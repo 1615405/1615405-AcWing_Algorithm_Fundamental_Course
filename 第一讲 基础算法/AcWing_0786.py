@@ -3,21 +3,20 @@ import random
 
 def find_kth(q: List[int], l: int, r: int, k: int) -> int:
     if l == r:  return q[l]
-
     pivot_index = random.randint(l, r)
     pivot = q[pivot_index]
-
-    i, j = l, r
-    while i <= j:
-        while q[i] < pivot:
+    i, j = l - 1, r + 1
+    while i < j:
+        while True:
             i += 1
-        while q[j] > pivot:
+            if q[i] >= pivot:
+                break
+        while True:
             j -= 1
-        if i <= j:
+            if q[j] <= pivot:
+                break
+        if i < j:
             q[i], q[j] = q[j], q[i]
-            i += 1
-            j -= 1
-
     left_part_size = j - l + 1
     if k <= left_part_size:
         return find_kth(q, l, j, k)
